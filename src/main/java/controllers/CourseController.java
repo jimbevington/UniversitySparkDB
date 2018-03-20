@@ -49,7 +49,7 @@ public class CourseController {
             String startDate = req.queryParams("startDate");
             String endDate= req.queryParams("endDate");
 
-            Course course = new Course(title, level, )
+//            Course course = new Course(title, level, )
 
             res.redirect("university/courses");
             return null;
