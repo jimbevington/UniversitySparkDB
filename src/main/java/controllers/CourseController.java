@@ -21,7 +21,7 @@ public class CourseController {
 //        index
         get("/university/courses", (req, res) -> {
 
-            HashMap<String, Object> model = new HashMap<String, Object>();
+            HashMap<String, Object> model = new HashMap<>();
             model.put("template", "templates/courses/index.vtl");
 
             List<Course> courses = DBCourse.getCourses();
@@ -32,6 +32,14 @@ public class CourseController {
         }, new VelocityTemplateEngine());
 
 //        create new
+        get("/university/courses/new", (req, res) -> {
+
+            HashMap<String, Object> model = new HashMap<>();
+            model.put("template", "templates/courses/create.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, new VelocityTemplateEngine());
 
 //        view course lessons
 
