@@ -16,7 +16,7 @@ public class Seeds {
         DBStudent.deleteAll();
         DBCourse.deleteAll();
 
-        Course course1 = new Course("Electrical Engineering", "BEng", new GregorianCalendar(2018,2,12), new GregorianCalendar(19,5,2018));
+        Course course1 = new Course("Electrical Engineering", "BEng", new GregorianCalendar(2018,2,12), new GregorianCalendar(2018,5,19));
         DBCourse.saveCourse(course1);
 
         Student student1 = new Student("Bart Simpson", 12, 000001, course1);

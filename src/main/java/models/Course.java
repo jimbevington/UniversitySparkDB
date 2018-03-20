@@ -1,9 +1,7 @@
 package models;
 
-import db.DBCourse;
-
 import javax.persistence.*;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,6 +17,8 @@ public class Course {
     private Set<Student> students;
     private Set<Lesson> lessons;
     private Set<Instructor> instructors;
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
 
     public Course() {
     }
@@ -109,4 +109,14 @@ public class Course {
     public void setEndDate(GregorianCalendar endDate) {
         this.endDate = endDate;
     }
+
+    public String returnStartDate(){
+        return sdf.format(startDate.getTime());
+    }
+
+    public String returnEndDate(){
+        return sdf.format(endDate.getTime());
+    }
+
+
 }
